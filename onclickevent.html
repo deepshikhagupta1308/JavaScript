@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="myFunction()">Click Me</button>
+    <p id="click"></p>
+    <h5 id="clickme" onclick="changeColor()">Onclick Event Attribute</h5>
+  </body>
+</html>
+<script>
+  function myFunction() {
+    console.log("Hello");
+    document.getElementById("click").innerText =
+      "The onclick attribute fires on a mouse click on the element.";
+    document.getElementById("clickme").style.color = "Blue";
+  }
+
+  function changeColor() {
+    document.getElementById("clickme").style.color = "Red";
+  }
+</script>
