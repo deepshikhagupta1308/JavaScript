@@ -9,7 +9,7 @@
   <body>
     <button onclick="myFunction()">Click Me</button>
     <p id="click"></p>
-    <h5 id="clickme" onclick="changeColor()">Onclick Event Attribute</h5>
+    <h5 class="clickme" onclick="changeColor()">Onclick Event Attribute</h5>
   </body>
 </html>
 <script>
@@ -17,10 +17,7 @@
     console.log("Hello");
     document.getElementById("click").innerText =
       "The onclick attribute fires on a mouse click on the element.";
-    document.getElementById("clickme").style.color = "Blue";
-  }
-
-  function changeColor() {
-    document.getElementById("clickme").style.color = "Red";
+    document.getElementsByClassName("clickme")[0].style.color = "Blue";
   }
 </script>
+
