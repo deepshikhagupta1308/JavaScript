@@ -1,12 +1,16 @@
 const object = {
-  name: "Deepshikha",
-  qualification: "Graduation",
-  city: "Indore",
-  details: {
-    address: "168",
-    phone: {
-      number1: "1234567892",
-      number2: "9876540321",
+  id: "0001",
+  type: "donut",
+  name: "Cake",
+  image: {
+    details: {
+      url: {
+        url: "images/0001.jpg",
+      },
+      dimension: {
+        width: "200",
+        height: "200",
+      },
     },
   },
 };
@@ -26,6 +30,6 @@ function deepCopy(object) {
 }
 
 newObject = deepCopy(object);
-newObject.details.address = "789";
+newObject.image.details.dimension.height = "500";
 console.log(newObject);
-console.log(object.details.address);
+console.log(object.image.details.dimension.height);
