@@ -19,18 +19,18 @@ console.log(multipleElementByTwo(numbers)); // [10, 6, 18, 60]
 
 //Approach2
 
-const numbers = [5, 3, 9, 30];
+const numbersN = [5, 3, 9, 30];
 
-const multipleElementByTwo = (numbers) => {
-  if (!Array.isArray(numbers)) {
+const multipleElementByTwoN = (numbersN) => {
+  if (!Array.isArray(numbersN)) {
     return "Input is not an array";
   }
 
   const arr = [];
 
-  for (i = 0; i < numbers.length; i++) {
-    numbers[i] = numbers[i] * 2;
+  for (i = 0; i < numbersN.length; i++) {
+    numbersN[i] = numbersN[i] * 2;
   }
-  return numbers;
+  return numbersN;
 };
-console.log(multipleElementByTwo(numbers)); // [10, 6, 18, 60]
+console.log(multipleElementByTwoN(numbersN)); // [10, 6, 18, 60]
