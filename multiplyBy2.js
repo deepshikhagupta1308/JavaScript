@@ -16,6 +16,7 @@ const multipleElementByTwo = (numArr) => {
 
 console.log(multipleElementByTwo(numbers)); // [10, 6, 18, 60]
 
+
 //Approach2
 
 const numbers = [5, 3, 9, 30];
