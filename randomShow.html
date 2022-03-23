@@ -10,7 +10,11 @@
     <h1>Total data: <span id="count"></span></h1>
     <div class="row" id="quotebox">
       <div class="text-center">
-        <button class="btn btn-default" onclick="randomQuote()" type="submit">
+        <button
+          class="btn btn-default"
+          onclick="showRandomUser()"
+          type="submit"
+        >
           Show Data
         </button>
       </div>
@@ -42,20 +46,20 @@
     },
   ];
 
-  let count = 0;
-  for (let item in usersList) {
-    count++;
+  function userId() {
+    document.getElementById("count").innerHTML = usersList.length;
   }
-  document.getElementById("count").innerHTML = count;
+  userId();
 
-  function randomQuote() {
-    let listLength = usersList.length;
-    let randVal = usersList[Math.floor(Math.random() * listLength)];
-    document.getElementById("detail").innerText = Object.values(randVal);
-    if (count >= 0) {
-      document.getElementById("count").innerHTML = count--;
-    } else {
-      document.getElementById("detail").innerHTML = "Stop";
+  function showRandomUser() {
+    if (usersList.length === 0) {
+      return;
     }
+    const currentUserIndex = Math.floor(Math.random() * usersList.length);
+    const currentUser = usersList[currentUserIndex];
+    document.getElementById("detail").innerText = currentUser.name;
+    usersList.splice(currentUserIndex, 1);
+    console.log(usersList.length);
+    userId();
   }
 </script>
