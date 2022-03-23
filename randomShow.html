@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Total data: <span id="count"></span></h1>
+    <div class="row" id="quotebox">
+      <div class="text-center">
+        <button class="btn btn-default" onclick="randomQuote()" type="submit">
+          Show Data
+        </button>
+      </div>
+      <div id="detail"><h1></h1></div>
+    </div>
+  </body>
+</html>
+<script>
+  var usersList = [
+    {
+      id: 1,
+      name: "Deepshikha",
+    },
+    {
+      id: 2,
+      name: "Sanskrati",
+    },
+    {
+      id: 3,
+      name: "Ravi",
+    },
+    {
+      id: 4,
+      name: "Avinash",
+    },
+    {
+      id: 5,
+      name: "Abhishek",
+    },
+  ];
+
+  let count = 0;
+  for (let item in usersList) {
+    count++;
+  }
+  document.getElementById("count").innerHTML = count;
+
+  function randomQuote() {
+    let listLength = usersList.length;
+    let randVal = usersList[Math.floor(Math.random() * listLength)];
+    document.getElementById("detail").innerText = Object.values(randVal);
+    if (count >= 0) {
+      document.getElementById("count").innerHTML = count--;
+    } else {
+      document.getElementById("detail").innerHTML = "Stop";
+    }
+  }
+</script>
