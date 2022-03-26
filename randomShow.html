@@ -8,6 +8,7 @@
   </head>
   <body>
     <h4>Total data: <span id="count"></span></h4>
+    <h4>selected data: <span id="selected-count"></span></h4>
     <div class="row" id="quotebox">
       <div class="text-center">
         <button
@@ -27,22 +28,41 @@
   let usersList = [];
 
   let fetchRes = fetch("https://jsonplaceholder.typicode.com/users");
-  //console.log(fetchRes);
   fetchRes
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
       usersList = data;
+      init();
       userId();
-      localStorage.setItem("list", JSON.stringify(data));
-      // console.log(usersList);
     });
 
+  let selected = [];
+
   function userId() {
-    document.getElementById("count").innerHTML = usersList.length;
+    document.getElementById("count").innerHTML = JSON.parse(
+      localStorage.getItem("list")
+    ).length;
+    console.log(JSON.parse(localStorage.getItem("list")).length);
+
+    document.getElementById("selected-count").innerHTML = JSON.parse(
+      localStorage.getItem("newlist")
+    ).length;
   }
 
-  // let newArr = [];
+  function init() {
+    if (localStorage.getItem("newlist") === null) {
+      localStorage.setItem("newlist", JSON.stringify(selected));
+    } else {
+      selected = JSON.parse(localStorage.getItem("newlist"));
+    }
+
+    if (localStorage.getItem("list") === null) {
+      localStorage.setItem("list", JSON.stringify(usersList));
+      console.log("init");
+    } else {
+      usersList = JSON.parse(localStorage.getItem("list"));
+    }
+  }
 
   function showRandomUser() {
     if (usersList.length === 0) {
@@ -51,7 +71,13 @@
     const currentUserIndex = Math.floor(Math.random() * usersList.length);
     const currentUser = usersList[currentUserIndex];
     document.getElementById("detail").innerText = currentUser.name;
-    usersList.splice(currentUserIndex, 1);
+    const sel = usersList.splice(currentUserIndex, 1);
+
+    selected.push(sel[0].name);
+
+    localStorage.setItem("newlist", JSON.stringify(selected));
+    localStorage.setItem("list", JSON.stringify(usersList));
+    //init();
     userId();
   }
 </script>
