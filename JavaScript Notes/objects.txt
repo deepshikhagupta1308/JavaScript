@@ -1,0 +1,70 @@
+26-03-2022
+
+##Object Notes :
+
+1. What are JS Objects ?
+- It is a data structure to keep data in a key value format.
+
+Example : 
+
+
+    const object = {
+        name:"deepshikha"
+    }
+
+    *key(name) must be string type only
+    *value(deepshikha) can be any data type
+
+
+2. How to create an object in JS?
+- Javascript Objects can be created in three ways.
+
+1.Using Object lterals or curly braces.
+Example : const obj1 = {}
+
+2.Using JS Object Constructor method.
+Example: const obj2 = new Object();
+
+3.Using Object create method.
+Example: const obj3 = Object.create();
+
+3.Difference Between new and literals?
+- Object created with literals are singleton.
+- This means change in one object it affects all of it's reference.
+
+Example: 
+
+   const employee = {
+       id:123,
+       name:"Arun Gupta"
+   }
+
+   const newEmployee = employee;
+   console.log('employee name:' , employee.name);
+   console.log('newEmployee name:' , newEmployee.name);
+
+   newEmployee.name = "Kapil Sharma";
+
+   console.log('employee name:' , employee.name);
+   console.log('newEmployee name:' , newEmployee.name);
+
+- Object defined with a new lets you have multiple instances of that object. 
+- This means change made to one instance, will not affect other instances.
+
+Example: 
+
+  const employee = function() {
+      this.name = "Deepshikha";
+  }
+
+  const employee = new Emp;
+
+  console.log('employee name:',employee.name);
+  console.log('Emp name:',Emp.name);
+
+  Emp.name = "Sanskrati";
+
+  console.log('employee name',employee.name);
+  console.log('Emp name:',Emp.name);
+
+
