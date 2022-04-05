@@ -1,0 +1,46 @@
+1.What is JavaScript?
+ - JavaScript is a synchronous single-threaded programming language.
+ - Single Threaded : that means JavaScript can only execute one command art a time.
+ - Synchronous single-threaded : that means that javascript can only execute one command at a time,  and in a specific order , that means it can only go to the next line once the current line has been finished executing.
+
+2.How JavaScript works?
+ - Everything in javascript happens inside an Execution Context.
+
+3.What is Execution context?
+ - Execution context is like a big box and it has two components in it.
+ - The first component is known as creation or memory component or variable enviroment.
+ - The second component of this execution context is the code component or execution phase or Thread of execution.
+ - JavaScript is not possible without this beautiful execution context.
+
+4.What is creation or memory component or variable enviroment?
+ - It's a stage of JavaScript execution context, which scans the entire code from top to bottom & helps to allocate memory for var variables & functions . It initialised variables with undefined & copies function as it is.
+ - Memory Component contains variables and functions as the kry-value pairs.
+
+5.What is execution phase or Thread of execution or code component?
+ - Execution phase is the place where the whole JavaScript code is executed.
+
+Example:
+
+  Line:1     var n = 2;
+  Line:2      function square(num){
+  Line:3       var ans = num*num;
+  Line:4       return ans;
+  Line:5     }
+  Line:6     var square2 = square(n);
+  Line:7     var square4 = square(4);
+
+1.The Whole JavaScript program is run,the execution context is created.The Global execution context is created.
+2.It has two components memory and code,and it is created in two phases.
+3.Phase1, is the memory creation phase.In the memory creation phase, we were allocating memory to all variables and functions inside the global space.
+- we allocated these variables with undefined and in case of function, we just copied it just stores the whole function.
+4.Phase2, the code execution phase ,the JS program is executed line by line , it goes to Line 1 ,it sees that 2 is here, so it replaces undefined with 2.
+-Similarly, It will invoke the function, as control goes to Line number6, it'll invoke the function and it'll invoke the another function.
+-When invoke the function,execution context is created,again there are two phases, the memory allocation phase, num and ans are allocated memory,and in the code execution phase,again this whole thing is run, the ans,num*num is executed, and num*num is stored in ans,and return statement is executed.
+-In the return statement,take back the control over here,to square2,and square2 is populated with a new value which is coming from this function invocation, which was the ans, ans was 4,so square2 was 4.
+-Similarly, it will happen again over here in this function execution, so a new execution context is created and again the same cycle repeates and that's how this function repeats 16 over here,and square4 is 16.
+that is how the whole things works.
+
+
+
+
+   
