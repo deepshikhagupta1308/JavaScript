@@ -1,6 +1,6 @@
 1.What is JavaScript?
  - JavaScript is a synchronous single-threaded programming language.
- - Single Threaded : that means JavaScript can only execute one command art a time.
+ - Single Threaded : that means JavaScript can only execute one command at a time.
  - Synchronous single-threaded : that means that javascript can only execute one command at a time,  and in a specific order , that means it can only go to the next line once the current line has been finished executing.
 
 2.How JavaScript works?
@@ -14,7 +14,7 @@
 
 4.What is creation or memory component or variable enviroment?
  - It's a stage of JavaScript execution context, which scans the entire code from top to bottom & helps to allocate memory for var variables & functions . It initialised variables with undefined & copies function as it is.
- - Memory Component contains variables and functions as the kry-value pairs.
+ - Memory Component contains variables and functions as the key-value pairs.
 
 5.What is execution phase or Thread of execution or code component?
  - Execution phase is the place where the whole JavaScript code is executed.
@@ -29,7 +29,7 @@ Example:
   Line:6     var square2 = square(n);
   Line:7     var square4 = square(4);
 
-1.The Whole JavaScript program is run,the execution context is created.The Global execution context is created.
+1.The Whole JavaScript program is run,the execution context is createdor the Global execution context is created.
 2.It has two components memory and code,and it is created in two phases.
 3.Phase1, is the memory creation phase.In the memory creation phase, we were allocating memory to all variables and functions inside the global space.
 - we allocated these variables with undefined and in case of function, we just copied it just stores the whole function.
