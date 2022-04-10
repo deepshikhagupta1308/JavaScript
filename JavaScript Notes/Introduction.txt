@@ -41,6 +41,26 @@ Example:
 that is how the whole things works.
 
 
+6.What is Browser APIs?
+-Browser APIs are APIs that are built into the browser and provide native features that can also be used in a web app. 
+-These can also be called web APIs.
+
+7.What is async & defer in script tag?
+- async tag: async downloads the file during HTML parsing and will pause the HTML parser to execute it when it has finished downloading.
+- defer tag: defer downloads the file during the HTML parsing and will only execute it after the parser has completed.
+  - defer script also guaranteed to execute in the order that they appear in the document.
+
+What are these methods & how does it works
+1.InnerHTML: The innerHTML property returns:The text content of the element, including all spacing and inner HTML tags.
+
+2.InnerText :The innerText property returns:Just the text content of the element and all its children, without CSS hidden text spacing and tags, except <script> and <style> elements.
+
+3.textContent : The textContent property returns:The text content of the element and all descendaces, with spacing and CSS hidden text, but without tags.
+
+4.append: The append() method inserts specified content at the end of the selected elements.
+
+5.appendChild
+
 
 
    

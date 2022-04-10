@@ -81,9 +81,12 @@ const {houseNo} = employee.address.details;
 //console.log(houseNo);
 
 
-const hobbies = ['books','music','sports'];
+let hobbies = ['books','music','sports'];
+let num = [1,2];
+console.log(hobbies=[...hobbies,num]);
 
 const [xyz,...rest] = hobbies;
+cons
 //console.log(xyz,rest);
 
 for(let j of hobbies){

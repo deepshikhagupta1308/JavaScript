@@ -1,0 +1,35 @@
+<!-- Whenever you create an execution context a this is created along with it even for the functional execution context and even for this global execution context and the global level this points to the global object that is the window in case of browser.
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h4>Window Object</h4>
+  </body>
+</html>
+<script>
+  var a = 10;
+  function b() {
+    x = 10;
+  }
+
+  console.log(window.a);
+  console.log(window.x);
+</script>
+
+
+
+const ages = [32, 33, 16, 40];
+const result = ages.filter(checkAdult);
+
+function checkAdult(age) {
+  return age >= 18;
+}
+
+console.log(result);

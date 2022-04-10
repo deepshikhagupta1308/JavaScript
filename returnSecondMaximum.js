@@ -8,25 +8,28 @@
 // For ["-214748364801","-214748364802"] should return "-214748364802".
 
 
-function secondMax(arr) {
-    if (arr.length < 1) {
-      return -1;
+function secondMaximum(array){
+    
+    if(array.length==0){
+        return -1;
     }
-    let max = -Infinity,
-      second = -Infinity;
-  
-    for (let i = 0; i < arr.length; i++) {
-      if (parseInt(arr[i]) > max) {
-        max = parseInt(arr[i]);
-      } else if (parseInt(arr[i]) < max && parseInt(arr[i]) > second) {
-        second = parseInt(arr[i]);
-      }
-    }
-    if (max == second) {
-      return -1;
-    }
-    return second;
-  }
-  
-  console.log(secondMax(["3", "-2"]));
+
+    let highest=0 ;
+    let secondHighest = 0;
+
+    for (let i = 0; i < array.length; i++) { 
+        if (parseInt(array[i]) > highest) { 
+           secondHighest = highest; 
+           highest = parseInt(array[i]); 
+        } 
+        else if (highest > parseInt(array[i]) > secondHighest) { 
+           secondHighest = parseInt(array[i]); 
+          }
+        
+        }
+       
+      return secondHighest;
+}
+console.log(secondMaximum(["5", "5", "4", "2"]));
+
 
